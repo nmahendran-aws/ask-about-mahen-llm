@@ -1,0 +1,81 @@
+Mahendran Natarajan
+Baltimore, MD ⬧ 309-660-1433 ⬧ nmahendar.natarajan@gmail.com ⬧ LinkedIn
+
+Associate Director | Solutions Architect with 22+ years of strategic leadership and hands-on experience, specializing in cloud-native transformation, enterprise architecture, and applied AI/ML across insurance, utilities, and financial services environments.
+Led end-to-end migration of 70+ applications from legacy infrastructure to AWS, Azure, OpenShift, and PCF environments, using Terraform Enterprise, GitHub Actions, and ArgoCD to cut deployment times by 85% while eliminating manual provisioning risks.
+Translated underwriting, claims, and policy business logic into modular microservices and event-driven systems using Node.js, Kafka, and AWS Lambda, improving performance by 80% and unlocking reusable architecture patterns across business lines.
+Built and led a global team of principal architects, engineers, and cloud specialists, driving adoption of AI copilots, policy-as-code governance, & EKS-based container strategy to align platform evolution with C-suite vision and reduce infrastructure costs by 70%.
+15+ years in people leadership and 12+ years in hands-on microservices and distributed systems development roles.
+
+KEY EXPERTISE 	
+Enterprise Architecture Strategy • Cloud Migration Planning & Execution • Cross-Functional Team Leadership • AI-Driven Business Optimization • C-Level Stakeholder Engagement • Architecture Governance Frameworks • Scalability Roadmap Development • Business-Centric Solution Design • Risk-Informed Decision Making • Global Talent Building & Mentorship • Executive Technical Communication • Innovation Pipeline Development • Cost Optimization Modeling • Microservices Architecture Adoption • Organizational Change Enablement
+
+PROFESSIONAL EXPERIENCE 	
+Associate Director, Enterprise Architecture & Cloud Strategy | Travelers Insurance via LTIMindtree	Mar 2016 – Present
+Huntvalley, Maryland - USA
+Designed enterprise-grade, cloud-native architectures spanning datacenter and hybrid environments, ensuring scalability, security, and resiliency.
+Developed architecture topologies and reusable patterns, supporting high-throughput applications for risk, claims, and underwriting domains.
+Performed network and datacenter assessments to inform modernization roadmaps, decompose legacy systems, and streamline application performance.
+Influenced $25M+ in strategic architecture decisions through executive roadmaps and cost-performance tradeoff analysis.
+Led modernization of 30+ legacy monoliths into container-native microservices using Spring Boot, Kafka, Docker, and Kubernetes (EKS/OpenShift), reducing release cycles by 40%.
+Delivered 20+ cloud migration projects, transforming mission-critical workloads to AWS using infrastructure best practices and native services (Lambda, ECS, Fargate, S3, SNS/SQS).
+Developed cloud adoption frameworks and migration playbooks, aligning with business needs, compliance mandates (GDPR, SOX), and cloud-first strategies.
+Built 15+ CI/CD pipelines using Jenkins, GitHub Actions, and Terraform Enterprise, reducing rollback incidents by 60% and accelerating deployment velocity by 85%.
+Automated secure, compliant infrastructure provisioning using Terraform, CloudFormation, and scripts in Python/Bash.
+Embedded DevSecOps practices with Snyk, SonarQube, and GitHub Advanced Security, ensuring continuous compliance and improved code quality.
+Resolved complex performance issues across compute, memory, storage, and middleware layers through deep RCA practices and collaboration with SRE teams.
+Tuned JVM internals and implemented distributed caching (Redis, Oracle Coherence), boosting transaction throughput and reducing latency.
+Enhanced system observability and implemented self-healing architecture patterns, improving resilience and availability to 99.9%.
+Acted as a trusted advisor to development, platform, and cybersecurity teams, aligning infrastructure decisions with strategic goals.
+Facilitated architecture reviews and technical walkthroughs, promoting long-term maintainability and cross-team alignment.
+Led agile ceremonies and drove collaboration across 10+ product teams, aligning roadmaps with $100M+ compliance-driven initiatives.
+Integrated AI/ML tools (AWS Bedrock, SageMaker, GitHub Copilot) across 12+ workflows, accelerating document generation and automating knowledge discovery by 50–65%.
+Contributed to 25+ RFPs with tailored technical proposals, driving $10M+ in new business through differentiated architecture positioning.
+Championed secure-by-design principles across cloud-native architectures, enforcing compliance with SOX, GDPR, and internal frameworks.
+Redesigned 100+ APIs to ensure secure integration across legacy and modern platforms, with a focus on data protection and regulatory alignment.
+Actively participated in architecture governance boards, shaping enterprise-wide standards and ensuring solution alignment to policy.
+Technical Architect | State Farm Insurance via Accenture	Apr 2010 – Mar 2016
+Bloomington, Illinois
+
+Led solution design for insurance platform components and aligned technical architecture with enterprise priorities.
+Translated requirements into scalable architecture blueprints balanced with compliance and operational requirements.
+Delivered full lifecycle project oversight from proof of concept to deployment, ensuring on-time, secure application delivery.
+Partnered cross-functionally to drive adoption of architecture standards across development, QA, and DevOps units.
+Facilitated stakeholder workshops and architecture reviews to ensure transparency, alignment, and strategic executive buy-in.
+Evaluated multiple technologies for enterprise adoption, producing comparative impact analysis for leadership decisions.
+Led architectural assessments and presented recommendations on modernization pathways and delivery approaches.
+
+EARLY CAREER 	
+Senior Software Engineer | ScottishPower, UK Utilities (via SAIC), Bengaluru, India	Feb 2008 – Mar 2010
+Software Engineer | First American Corporation, US Title Insurance (via FIC) ,Bengaluru, India  	May 2005 – Feb2008
+Software Engineer | Tsunami Infosolutions, CRM, Bengaluru, India	   July 2004 – Apr 2005
+Software Engineer | eSkill Technologies, Bengaluru, India 	Apr 2003 – July 2004
+
+CERTIFICATIONS 	
+Amazon Certified Solutions Architect – Associate | Amazon Web Services
+Generative AI for Business Partners | Amazon Web Services
+Architecting on AWS | Amazon Web Services
+Serverless on AWS | Amazon Web Services
+Amazon EKS | Amazon Web Services
+
+EDUCATION 	
+Master of Science (MS), Computer Science | Bharathiar University
+Bachelor of Science (BS), Computer Science | Bharathidasan University
+
+ADDITIONAL INFORMATION	
+Cloud Platforms:
+AWS, Azure,GCP,  Red Hat OpenShift, Pivotal Cloud Foundry (PCF), EKS, Lambda
+Infrastructure & CI/CD:
+HashiCorp Terraform, Helm Charts, Argo CD, Jenkins CI/CD, GitHub Actions, Azure DevOps, GitHub, GitLab, IBM UrbanCode Deploy (UCD)
+Containerization & Orchestration:
+Docker, Kubernetes
+Languages & Frameworks:
+Tools and Methodologies:
+Spring Boot, Node.js, J2EE, React, Next.js, REST, GraphQL, WebSocket
+XP, Lean, SAFe, Agile, DevSecOps, SRE and SonarQube, ServiceNow
+Messaging & Databases:
+Apache Kafka, Amazon SQS, IBM MQ, Rabbit MQ, MongoDB, Postgres, MySQL, SQL
+AI/ML & Generative AI Tools:
+Amazon Bedrock, Amazon Q, AWS SageMaker, GitHub Copilot, Azure AI, AI Agent, Retrieval-Augmented Generation (RAG), Machine Learning
+
+

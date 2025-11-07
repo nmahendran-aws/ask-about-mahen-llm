@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "content": "what is my name?"
+  },
+  {
+    "role": "assistant",
+    "content": "Your name is Mahendran Natarajan. How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "what is your name then?"
+  },
+  {
+    "role": "assistant",
+    "content": "I represent Mahendran Natarajan on the Mahen website, so you can refer to me as the Digital Application or assistant. How may I assist you further?"
+  },
+  {
+    "role": "user",
+    "content": "my name is alex"
+  },
+  {
+    "role": "assistant",
+    "content": "Nice to meet you, Alex! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "what is my name?"
+  },
+  {
+    "role": "assistant",
+    "content": "Your name is Alex. How can I help you today, Alex?"
+  },
+  {
+    "role": "user",
+    "content": "you said above my name is Mahendran"
+  },
+  {
+    "role": "assistant",
+    "content": "I apologize for any confusion, Alex! I represent Mahendran Natarajan, but I understand your name is Alex. How can I assist you today?"
+  }
+]

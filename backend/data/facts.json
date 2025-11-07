@@ -1,0 +1,113 @@
+{
+  "full_name": "Mahendran Natarajan",
+  "name": "Mahendran",
+  "current_role": "Associate Director | Solutions Architect",
+  "location": "Baltimore, MD",
+  "phone": "309-660-1433",
+  "email": "nmahendar.natarajan@gmail.com",
+  "linkedin": "linkedin.com/in/mahendran-natarajan",
+  "specialties": [
+    "Cloud-Native Transformation",
+    "Enterprise Architecture",
+    "Applied AI/ML",
+    "Microservices and Distributed Systems",
+    "Architecture Governance Frameworks",
+    "Cloud Migration Planning & Execution",
+    "Cross-Functional Team Leadership",
+    "C-Level Stakeholder Engagement",
+    "Risk-Informed Decision Making",
+    "Cost Optimization Modeling"
+  ],
+  "years_experience": 22,
+  "summary": "Associate Director and Solutions Architect with 22+ years of strategic leadership and hands-on experience in cloud-native transformation, enterprise architecture, and applied AI/ML across insurance, utilities, and financial services industries.",
+  "key_achievements": [
+    "Led migration of 70+ applications from legacy infrastructure to AWS, Azure, OpenShift, and PCF, reducing deployment time by 85%.",
+    "Transformed underwriting and claims systems into microservices using Node.js, Kafka, and AWS Lambda, improving performance by 80%.",
+    "Built and led a global team of architects and engineers to implement EKS-based container strategy and AI copilots, reducing infra costs by 70%.",
+    "Integrated AI/ML tools like AWS Bedrock and GitHub Copilot to automate workflows and accelerate document generation by 50–65%.",
+    "Contributed to 25+ RFPs and influenced $25M+ in strategic architecture decisions."
+  ],
+  "professional_experience": [
+    {
+      "title": "Associate Director, Enterprise Architecture & Cloud Strategy",
+      "organization": "Travelers Insurance via LTIMindtree",
+      "location": "Hunt Valley, Maryland - USA",
+      "duration": "Mar 2016 – Present",
+      "responsibilities": [
+        "Designed enterprise-grade, cloud-native architectures ensuring scalability and resiliency.",
+        "Led modernization of 30+ monoliths into microservices using Spring Boot, Kafka, Docker, and Kubernetes.",
+        "Delivered 20+ cloud migration projects to AWS using best practices and native services.",
+        "Developed architecture frameworks and migration playbooks aligned with compliance mandates.",
+        "Built 15+ CI/CD pipelines with Jenkins, GitHub Actions, and Terraform Enterprise.",
+        "Implemented DevSecOps practices with Snyk, SonarQube, and GitHub Advanced Security.",
+        "Enhanced observability and implemented self-healing architectures improving uptime to 99.9%.",
+        "Acted as a trusted advisor to platform, cybersecurity, and development teams.",
+        "Integrated AI/ML tools to automate workflows and accelerate innovation."
+      ]
+    },
+    {
+      "title": "Technical Architect",
+      "organization": "State Farm Insurance via Accenture",
+      "location": "Bloomington, Illinois",
+      "duration": "Apr 2010 – Mar 2016",
+      "responsibilities": [
+        "Led solution design for insurance platform components aligned with enterprise strategy.",
+        "Translated requirements into scalable architecture blueprints.",
+        "Delivered full lifecycle project oversight from proof of concept to deployment.",
+        "Facilitated stakeholder workshops and architecture reviews for executive buy-in.",
+        "Evaluated and recommended modernization technologies."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "organization": "ScottishPower, UK Utilities (via SAIC)",
+      "location": "Bengaluru, India",
+      "duration": "Feb 2008 – Mar 2010"
+    },
+    {
+      "title": "Software Engineer",
+      "organization": "First American Corporation, US Title Insurance (via FIC)",
+      "location": "Bengaluru, India",
+      "duration": "May 2005 – Feb 2008"
+    },
+    {
+      "title": "Software Engineer",
+      "organization": "Tsunami Infosolutions, CRM",
+      "location": "Bengaluru, India",
+      "duration": "Jul 2004 – Apr 2005"
+    },
+    {
+      "title": "Software Engineer",
+      "organization": "eSkill Technologies",
+      "location": "Bengaluru, India",
+      "duration": "Apr 2003 – Jul 2004"
+    }
+  ],
+  "certifications": [
+    "Amazon Certified Solutions Architect – Associate | AWS",
+    "Generative AI for Business Partners | AWS",
+    "Architecting on AWS | AWS",
+    "Serverless on AWS | AWS",
+    "Amazon EKS | AWS"
+  ],
+  "education": [
+    {
+      "degree": "Master of Science (MS), Computer Science",
+      "institution": "Bharathiar University"
+    },
+    {
+      "degree": "Bachelor of Science (BS), Computer Science",
+      "institution": "Bharathidasan University"
+    }
+  ],
+  "technical_skills": {
+    "cloud_platforms": ["AWS", "Azure", "GCP", "Red Hat OpenShift", "Pivotal Cloud Foundry (PCF)", "EKS", "Lambda"],
+    "infrastructure_ci_cd": ["Terraform", "Helm", "Argo CD", "Jenkins", "GitHub Actions", "Azure DevOps", "GitHub", "GitLab", "IBM UrbanCode Deploy"],
+    "containerization": ["Docker", "Kubernetes"],
+    "languages_frameworks": ["Spring Boot", "Node.js", "J2EE", "React", "Next.js", "REST", "GraphQL", "WebSocket"],
+    "methodologies": ["XP", "Lean", "SAFe", "Agile", "DevSecOps", "SRE"],
+    "tools": ["SonarQube", "ServiceNow"],
+    "messaging_databases": ["Kafka", "Amazon SQS", "IBM MQ", "RabbitMQ", "MongoDB", "Postgres", "MySQL", "SQL"],
+    "ai_ml_tools": ["Amazon Bedrock", "Amazon Q", "AWS SageMaker", "GitHub Copilot", "Azure AI", "AI Agent", "RAG", "Machine Learning"]
+  }
+}
