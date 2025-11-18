@@ -39,7 +39,7 @@ def main():
         ],
         check=True,
     )
-
+    
     # Copy application files
     print("Copying application files...")
     for file in ["server.py", "lambda_handler.py", "context.py", "resources.py"]:

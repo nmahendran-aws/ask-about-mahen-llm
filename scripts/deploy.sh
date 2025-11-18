@@ -2,7 +2,7 @@
 set -e
 
 ENVIRONMENT=${1:-dev}          # dev | test | prod
-PROJECT_NAME=${2:-twin}
+PROJECT_NAME=${2:-ask-about-mahen}
 
 echo "🚀 Deploying ${PROJECT_NAME} to ${ENVIRONMENT}..."
 
@@ -44,6 +44,8 @@ echo "NEXT_PUBLIC_API_URL=$API_URL" > .env.production
 
 npm install
 npm run build
+
+echo "📤 Deploying frontend to S3 bucket: $FRONTEND_BUCKET ..."
 aws s3 sync ./out "s3://$FRONTEND_BUCKET/" --delete
 cd ..
 

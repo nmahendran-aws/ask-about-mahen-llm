@@ -12,7 +12,7 @@ terraform {
 
 provider "aws" {
    assume_role {
-    role_arn     = "arn:aws:iam::471727841202:role/Terraform_Admin_Role"
+    role_arn     = "arn:aws:iam::471727841202:role/aiengineer-role"
     session_name = "TerraformSession"
  }
   alias  = "us_east_1"
