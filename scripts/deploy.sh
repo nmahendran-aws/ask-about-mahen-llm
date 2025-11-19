@@ -56,7 +56,6 @@ echo "📤 Deploying frontend to S3 bucket: $FRONTEND_BUCKET ..."
 aws s3 sync ./out "s3://$FRONTEND_BUCKET/" --delete
 cd ..
 
-# 4. Final messages
 echo -e "\n✅ Deployment complete!"
 echo "🌐 CloudFront URL : $(terraform -chdir=terraform output -raw cloudfront_url)"
 if [ -n "$CUSTOM_URL" ]; then

@@ -33,7 +33,7 @@ uv run deploy.py
 Set a unique name for the deployment S3 bucket and create the bucket:
 
 ```bash
-DEPLOY_BUCKET="twin-deploy-$(date +%s)"
+DEPLOY_BUCKET="ask-about-mahen-deploy-$(date +%s)"
 aws s3 mb s3://$DEPLOY_BUCKET --region $DEFAULT_AWS_REGION
 ```
 
