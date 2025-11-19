@@ -12,7 +12,7 @@ terraform {
 
 provider "aws" {
    assume_role {
-    role_arn     = "arn:aws:iam::471727841202:role/aiengineer-role"
+    role_arn     = "arn:aws:iam::471727841202:role/github-actions-ask-about-mahen-deploy"
     session_name = "TerraformSession"
  }
   alias  = "us_east_1"
