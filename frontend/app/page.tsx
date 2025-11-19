@@ -9,7 +9,7 @@ export default function Home() {
             Ask about Mahen
           </h1>
           <p className="text-center text-gray-600 mb-8">
-            Professional Experience till date
+           My Professional Experience, up to date 
           </p>
 
           <div className="h-[600px]">
