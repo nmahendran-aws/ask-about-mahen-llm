@@ -15,28 +15,28 @@ echo "📦 Building Lambda package..."
 cd terraform
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
-terraform init -input=false \
-  -backend-config="bucket=ask-about-mahen-terraform-state-${AWS_ACCOUNT_ID}" \
-  -backend-config="key=${ENVIRONMENT}/terraform.tfstate" \
-  -backend-config="region=${AWS_REGION}" \
-  -backend-config="dynamodb_table=ask-about-mahen-terraform-locks" \
-  -backend-config="encrypt=true"
+# terraform init -input=false \
+#   -backend-config="bucket=ask-about-mahen-terraform-state-${AWS_ACCOUNT_ID}" \
+#   -backend-config="key=${ENVIRONMENT}/terraform.tfstate" \
+#   -backend-config="region=${AWS_REGION}" \
+#   -backend-config="dynamodb_table=ask-about-mahen-terraform-locks" \
+#   -backend-config="encrypt=true"
 
-if ! terraform workspace list | grep -q "$ENVIRONMENT"; then
-  terraform workspace new "$ENVIRONMENT"
-else
-  terraform workspace select "$ENVIRONMENT"
-fi
+# if ! terraform workspace list | grep -q "$ENVIRONMENT"; then
+#   terraform workspace new "$ENVIRONMENT"
+# else
+#   terraform workspace select "$ENVIRONMENT"
+# fi
 
-# Use prod.tfvars for production environment
-if [ "$ENVIRONMENT" = "prod" ]; then
-  TF_APPLY_CMD=(terraform apply -var-file=prod.tfvars -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
-else
-  TF_APPLY_CMD=(terraform apply -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
-fi
+# # Use prod.tfvars for production environment
+# if [ "$ENVIRONMENT" = "prod" ]; then
+#   TF_APPLY_CMD=(terraform apply -var-file=prod.tfvars -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
+# else
+#   TF_APPLY_CMD=(terraform apply -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
+# fi
 
-echo "🎯 Applying Terraform..."
-"${TF_APPLY_CMD[@]}"
+# echo "🎯 Applying Terraform..."
+# "${TF_APPLY_CMD[@]}"
 
 API_URL=$(terraform output -raw api_gateway_url)
 FRONTEND_BUCKET=$(terraform output -raw s3_frontend_bucket)

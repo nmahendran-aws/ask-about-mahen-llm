@@ -7,14 +7,7 @@ variable "project_name" {
   }
 }
 
-variable "environment" {
-  description = "Environment name (dev, test, prod)"
-  type        = string
-  validation {
-    condition     = contains(["dev", "test", "prod"], var.environment)
-    error_message = "Environment must be one of: dev, test, prod."
-  }
-}
+
 
 variable "bedrock_model_id" {
   description = "Bedrock model ID"
