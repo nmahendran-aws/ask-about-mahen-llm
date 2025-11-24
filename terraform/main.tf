@@ -1,5 +1,15 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+provider "aws" {
+  alias  = "us_east_1"
+  region = "us-east-1"
+}
+
 # Data source to get current AWS account ID
 data "aws_caller_identity" "current" {}
+
 
 locals {
   aliases = var.use_custom_domain && var.root_domain != "" ? [
