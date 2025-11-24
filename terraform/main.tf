@@ -130,13 +130,40 @@ resource "aws_iam_role_policy_attachment" "lambda_s3" {
   role       = aws_iam_role.lambda_role.name
 }
 
+# S3 bucket for Lambda deployment packages
+resource "aws_s3_bucket" "lambda_deploy" {
+  bucket = "ask-about-mahen-deploy-${data.aws_caller_identity.current.account_id}"
+  tags   = local.common_tags
+}
+
+resource "aws_s3_bucket_public_access_block" "lambda_deploy" {
+  bucket = aws_s3_bucket.lambda_deploy.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+# Upload Lambda deployment package to S3
+resource "aws_s3_object" "lambda_package" {
+  bucket = aws_s3_bucket.lambda_deploy.id
+  key    = "lambda-deployment.zip"
+  source = "${path.module}/../backend/lambda-deployment.zip"
+  etag   = filemd5("${path.module}/../backend/lambda-deployment.zip")
+  tags   = local.common_tags
+}
+
+
 # Lambda function
 resource "aws_lambda_function" "api" {
-  filename         = "${path.module}/../backend/lambda-deployment.zip"
+  # Use S3 for deployment package when using HCP Terraform
+  s3_bucket        = aws_s3_bucket.lambda_deploy.id
+  s3_key           = aws_s3_object.lambda_package.key
   function_name    = "${local.name_prefix}-api"
   role             = aws_iam_role.lambda_role.arn
   handler          = "lambda_handler.handler"
-  source_code_hash = filebase64sha256("${path.module}/../backend/lambda-deployment.zip")
+  source_code_hash = aws_s3_object.lambda_package.etag
   runtime          = "python3.13"
   architectures    = ["x86_64"]
   timeout          = var.lambda_timeout

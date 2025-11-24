@@ -7,7 +7,7 @@ terraform.tfstate.d/
 *.tfvars.secret
 
 # Lambda packages
-lambda-deployment.zip
+# lambda-deployment.zip  # Now tracked for HCP Terraform
 lambda-package/
 
 # Memory storage (contains conversation history)
