@@ -1,0 +1,102 @@
+Mahendran Natarajan
+Baltimore, MD ⬧ 309-660-1433 ⬧ nmahendar.natarajan@gmail.com ⬧ LinkedIn ⬧ GitHub ⬧  Ask About Me
+
+Director | AWS Gen-AI Enterprise Architect with 22+ years of strategic leadership and hands-on experience, specializing in cloud-native transformation, enterprise architecture, and applied AI/ML across insurance, utilities, and financial services environments.
+Led end-to-end migration of 70+ applications from legacy infrastructure to AWS, Azure, OpenShift, and PCF environments, using Terraform Enterprise, GitHub Actions, and ArgoCD to cut deployment times by 85% while eliminating manual provisioning risks.
+Built and led a global team of principal architects, engineers, and cloud specialists, driving adoption of AI, policy-as-code governance, & EKS-based container strategy to align platform evolution with C-suite vision and reduce infrastructure costs by 70%.
+Developed an AI-powered claim summarization system that processes notes and automatically generates summaries, next steps, and emails using streaming responses for real-time output and Pydantic for data validation.
+Built with Next.js and React frontend, FastAPI backend with authentication for secure access, OpenAI's GPT-5-nano integration,Streaming Response and hosted on AWS infrastructure (API Gateway/Lambda/S3) with Vercel deployment. 
+Agetic AI -  Built and deployed a production-grade, multi-agent AI pipeline that coordinates 5 specialized agents to perform portfolio analysis and research — orchestration via SQS + Lambda , OpenAI Agents SDK,with Terraform. (AWS Lambda, SQS, Terraform, OpenAI Agents SDK, LiteLLM)
+Implemented cost‑optimized semantic search by ingesting documents into S3 Vectors, embedding text with a SageMaker serverless endpoint (sentence-transformers/all-MiniLM-L6-v2), and enabling fast semantic retrieval — reduced vector storage cost by ~90% versus OpenSearch. (S3 Vectors, SageMaker, HuggingFace)
+Deployed an App Runner service that uses Bedrock models (Nova/OSS/Claude) and a Playwright MCP browsing tool to generate automated research, then pipeline results into the ingest flow — supports scheduled autonomous research and on‑demand queries. (App Runner, AWS Bedrock, Playwright MCP, EventBridge)
+Designed the full-stack frontend + API and secure auth, delivering a user experience with authentication, Next.js frontend, and FastAPI backend on Lambda; integrated end‑to‑end testing and CI-friendly packaging with Docker and uv. (Next.js, FastAPI, Docker,Python UV)
+Added enterprise observability, guardrails and compliance features: LangFuse/OpenTelemetry tracing for agent executions, structured CloudWatch logging and alarms, input/output validation and audit trails for explainability. (LangFuse, CloudWatch, KMS/Secrets Manager, Pydantic)
+Translated underwriting, claims, and policy business logic into modular microservices and event-driven systems using Node.js, Kafka, and AWS Lambda, improving performance by 80% and unlocking reusable architecture patterns across business lines.
+15+ years in people leadership and 12+ years in hands-on microservices and distributed systems development roles.
+
+
+TECHNICAL SKILLS	
+Cloud Platforms:
+AWS, Azure, Red Hat OpenShift, Pivotal Cloud Foundry (PCF), EKS, Lambda, API Gateway, NGINX,
+AI/ML & Generative AI Tools:
+Amazon Bedrock, Amazon Q Business, AWS SageMaker, GitHub Copilot, Azure AI, AI Agent, Retrieval-Augmented Generation (RAG) , Langchain ( Python and Typescript),S3 Vectors, PineCone, n8n,PyDant, FastApi, Open AI Platform, Claude3-7-sonnet,  GPT 5 and Nano, LiteLLM, mlFlow, Sagemaker Pipelines, Jupyter Notes, Cursor, Antigravity
+Infrastructure & CI/CD:
+HashiCorp Terraform, Helm Charts, Argo CD, Jenkins CI/CD, GitHub Actions, Azure DevOps, GitHub, GitLab, IBM UrbanCode Deploy (UCD)
+Containerization & Orchestration:
+Docker, Kubernetes
+Languages & Frameworks:
+Tools and Methodologies:
+Spring Boot, Node.js, J2EE, React, Next.js, REST, GraphQL, WebSocket, Python, Vercel
+XP, Lean, SAFe, Agile, DevSecOps, SRE and SonarQube
+Messaging & Databases:
+Apache Kafka, Amazon SQS, IBM MQ, Rabbit MQ, MongoDB, Postgres, MySQL, SQL
+Authentication and Authorization
+Okta, IAM, SAML, Single-Signon, Federated Login, Spring Security, Clerk Config, JWT, Hashicorp Vault
+
+
+PROFESSIONAL EXPERIENCE 	
+Director, Enterprise Architecture & Cloud Strategy  Travelers Insurance via LTIMindtree	Mar 2016 – Present
+Huntvalley, Maryland - USA
+
+Enterprise & Cloud Data Architecture: Defined and scaled enterprise cloud architecture strategy for 70+ insurance applications, supporting over $300M in active policies across risk, underwriting, and claims. Designed data flows, integrations, and modernized information exchange to transition legacy applications into cloud-native and AWS-based Lake House architectures.
+Data Governance & Compliance: Actively participated in enterprise architecture governance boards, ensuring alignment with SOX, GDPR, and internal data governance standards.
+Cloud Data Solutions (AWS Lake House): Architected and implemented secure, scalable data pipelines leveraging AWS-native services (S3, Glue, Athena, Bedrock, SageMaker) to support real-time analytics, AI/ML workflows, and cross-domain interoperability.
+Gen-AI Automation (Test Case Creation): Developed an AI Agent using AWS Bedrock and LangChain (TypeScript) to auto-generate test cases and synthetic data from database schemas, leveraging Claude 3, Faker, and SQL-DDL parsers. Integrated with AWS SDK, Lambda, and S3 for scalable, automated QA data generation workflows using mlFlow.
+Data Integration & Modernization: Led transformation of 20+ legacy systems into containerized microservices/serverless solutions (Docker, Kubernetes, EKS, OpenShift), optimizing data integration and reducing latency to support enterprise risk and claims platforms.
+Performance Optimization & Scalability: Improved application by introducing distributed caching (Redis, Oracle Coherence), while also scaling CI/CD pipelines with Jenkins, Terraform Enterprise, and GitHub Actions, reducing rollback incidents by 60%.
+Metadata & Discoverability: Integrated metadata management and lineage tools to enhance data discoverability and automation, enabling faster decision-making and improved data quality across business workflows.
+Data Security & DevSecOps: Championed DevSecOps by embedding security into CI/CD pipelines with SonarQube, Snyk, and GitHub Actions, and enforced data security standards across enterprise applications and cloud data platforms.
+Collaboration & Leadership: Drove cross-functional collaboration across 6 departments and 10+ product teams to align data strategy with $100M+ compliance priorities. Mentored engineers and architects through code/design reviews and technical walkthroughs, instilling best practices for long-term maintainability.
+Technology Evaluation & Roadmaps: Presented multi-year architecture roadmaps influencing $25M+ in technology investment decisions. Evaluated trade-offs across architectural patterns to balance scalability, security, and cost.
+Continuous Improvement & Innovation: Integrated AI/ML tools (AWS Bedrock, SageMaker, GitHub Copilot) across 12+ business workflows, accelerating document generation and knowledge automation by 50–65%. Enhanced system reliability with self-healing architecture patterns, achieving 99.9% uptime.
+Redesigned 100+ APIs to comply with SOX, GDPR, and internal frameworks, strengthening security and interoperability across platforms using Spring Boot and Node JS - Express and Nest JS
+Implemented robust exception handling, logging, and validation mechanisms in Java applications to ensure system resilience and maintainability.
+Created reusable utility libraries and standardized coding practices in Java to improve development efficiency and consistency across teams.
+Secured $10M+ in new business by authoring RFPs with tailored technical proposals, strengthening enterprise architecture positioning in competitive bids.
+Enhanced system resilience by automating recurring fixes and implementing self-healing architecture patterns.
+Delivered IAM solutions leveraging OAuth, OpenID Connect (OIDC), and related security standards to enforce robust authentication and authorization.
+Developed an intelligent chatbot leveraging Retrieval-Augmented Generation (RAG) with LangChain, Flowise, and a vector database - Pinecone,Qdrant to deliver context-aware, human-like responses for business use cases.
+Strengthened Agile delivery outcomes by facilitating sprint planning, retrospectives, and backlog grooming with JIRA, improving predictability and alignment.
+
+
+Technical Lead Architect  State Farm Insurance via Accenture	Apr 2010 – Mar 2016
+Bloomington, Illinois, USA
+
+Led solution design for insurance platform components and aligned technical architecture with enterprise priorities.
+Translated requirements into scalable architecture blueprints balanced with compliance and operational requirements.
+Delivered full lifecycle project oversight from proof of concept to deployment, ensuring on-time, secure application delivery.
+Partnered cross-functionally to drive adoption of architecture standards across development, QA, and DevOps units.
+Facilitated stakeholder workshops and architecture reviews to ensure transparency, alignment, and strategic executive buy-in.
+Evaluated multiple technologies for enterprise adoption, producing comparative impact analysis for leadership decisions.
+Led architectural assessments and presented recommendations on modernization pathways and delivery approaches.
+Managed the deployment of web applications with high availability, fault tolerance, and geo-distributed architecture, ensuring optimal performance and reliability.
+Built distributed, scalable, and highly available/fault-tolerant architectures.
+Broke down very complex technical programs, abstracted technical complexity, and presented information to non-technical stakeholders and decision-makers.
+Managed the deployment of web applications with high availability, fault tolerance, and geo-distributed architecture, ensuring optimal performance and reliability.
+Built distributed, scalable, and highly available/fault-tolerant architectures.
+Broke down very complex technical programs, abstracted technical complexity, and presented information to non-technical stakeholders and decision-makers.
+Designed and meticulously documented the upgrade and migration processes of Java-based applications, ensuring a well-defined and streamlined transition to new versions and technologies.
+Successfully orchestrated the migration of legacy applications to a new platform, utilizing J2EE technologies with Spring Boot in a cloud-based infrastructure, resulting in improved performance and scalability.
+Collaborated in the review of use cases, design documents, code, test plans, and implementation plans to ensure comprehensive project understanding and adherence to best practices.
+	                                      		  
+
+PREVIOUS EXPERIENCES 	
+Senior Software Engineer | ScottishPower, UK Utilities (via SAIC), Bengaluru, India	Feb 2008 – Mar 2010
+Software Engineer | First American Corporation, US Title Insurance (via FIC) ,Bengaluru, India  	May 2005 – Feb2008
+Software Engineer | Tsunami Infosolutions, CRM, Bengaluru, India	   July 2004 – Apr 2005
+Software Engineer | eSkill Technologies, Bengaluru, India 	Apr 2003 – July 2004
+
+CERTIFICATIONS 	
+Amazon Certified Solutions Architect – Associate | Amazon Web Services - Credly
+Serverless on AWS | Amazon Web Services - Credly
+Amazon EKS | Amazon Web Services - Credly
+Amazon Migration Foundations | Amazon Web Services - Credly
+AWS Well Architected Proficient | Amazon Web Services - Credly
+Generative AI for Business Partners | Amazon Web Services - Credly
+Architecting on AWS | Amazon Web Services
+
+EDUCATION 	
+Master of Science (MS), Computer Science | Bharathiar University
+Bachelor of Science (BS), Computer Science | Bharathidasan University
+
+

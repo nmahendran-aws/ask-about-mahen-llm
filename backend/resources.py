@@ -1,4 +1,5 @@
 from pypdf import PdfReader
+from docx import Document
 import json
 
 # Read LinkedIn PDF
@@ -21,3 +22,9 @@ with open("./data/style.txt", "r", encoding="utf-8") as f:
 
 with open("./data/facts.json", "r", encoding="utf-8") as f:
     facts = json.load(f)
+
+try:
+    doc = Document("./data/resume.docx")
+    resume = "\n".join([para.text for para in doc.paragraphs])
+except Exception as e:
+    resume = f"Resume not available: {e}"
