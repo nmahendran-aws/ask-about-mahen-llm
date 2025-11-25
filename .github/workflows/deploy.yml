@@ -69,6 +69,7 @@ jobs:
           ./scripts/deploy.sh ${{ github.event.inputs.environment || 'dev' }}
         env:
           AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+          TFC_TOKEN: ${{ secrets.TFC_TOKEN }}
           
       - name: Get Deployment URLs
         id: deploy_outputs
