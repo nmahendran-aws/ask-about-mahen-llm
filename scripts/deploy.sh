@@ -19,7 +19,7 @@ echo "📦 Building Lambda package..."
 # 2. Terraform workspace & apply
 # cd terraform
 #AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-# AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
+AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
 # terraform init -input=false
 
 # if ! terraform workspace list | grep -q "$ENVIRONMENT"; then
@@ -110,6 +110,33 @@ npm run build
 echo "📤 Deploying frontend to S3 bucket: $FRONTEND_BUCKET ..."
 aws s3 sync ./out "s3://$FRONTEND_BUCKET/" --delete
 cd ..
+
+# 4. Invalidate CloudFront
+echo "🔄 Invalidating CloudFront cache..."
+if [ -n "$CLOUDFRONT_URL" ]; then
+  # Extract domain from URL (remove https://)
+  CF_DOMAIN=${CLOUDFRONT_URL#https://}
+  
+  # Find distribution ID by domain name (more reliable than origin)
+  DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?contains(Aliases.Items, '$CF_DOMAIN') || DomainName=='$CF_DOMAIN'].Id | [0]" --output text)
+  
+  if [ "$DISTRIBUTION_ID" != "None" ] && [ -n "$DISTRIBUTION_ID" ]; then
+    echo "Found distribution ID: $DISTRIBUTION_ID"
+    aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
+  else
+    echo "⚠️ Could not find CloudFront distribution for $CLOUDFRONT_URL"
+    # Fallback: try to find by origin bucket
+    echo "Trying to find by origin bucket..."
+    DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[?contains(DomainName, '$FRONTEND_BUCKET')]].Id | [0]" --output text)
+    if [ "$DISTRIBUTION_ID" != "None" ] && [ -n "$DISTRIBUTION_ID" ]; then
+       echo "Found distribution ID: $DISTRIBUTION_ID"
+       aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
+    else
+       echo "❌ Failed to find distribution ID. Please invalidate manually."
+    fi
+  fi
+fi
+
 
 echo -e "\n✅ Deployment complete!"
 echo "🌐 CloudFront URL : $CLOUDFRONT_URL"
