@@ -40,7 +40,7 @@ echo "📦 Building Lambda package..."
 
 # Fetch outputs from HCP Terraform workspace
 echo "📥 Fetching outputs from HCP Terraform workspace..."
-WORKSPACE_NAME="ask-about-mahen-llm"
+WORKSPACE_ID="ws-WiwHV6fVASxSJhc9"
 ORG_NAME="mahen-arch"
 
 # Check if TFC_TOKEN is set
@@ -54,7 +54,7 @@ fi
 API_RESPONSE=$(curl -s \
   --header "Authorization: Bearer $TFC_TOKEN" \
   --header "Content-Type: application/vnd.api+json" \
-  "https://app.terraform.io/api/v2/workspaces/${ORG_NAME}/${WORKSPACE_NAME}/current-state-version?include=outputs")
+  "https://app.terraform.io/api/v2/workspaces/${WORKSPACE_ID}/current-state-version?include=outputs")
 
 # Check if API call was successful
 if [ -z "$API_RESPONSE" ]; then
