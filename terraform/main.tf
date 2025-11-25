@@ -144,25 +144,22 @@ resource "aws_s3_bucket_public_access_block" "lambda_deploy" {
   restrict_public_buckets = true
 }
 
-# Upload Lambda deployment package to S3
-resource "aws_s3_object" "lambda_package" {
+# Data source for the Lambda package in S3 (uploaded by CI/CD)
+data "aws_s3_object" "lambda_package" {
   bucket = aws_s3_bucket.lambda_deploy.id
   key    = "lambda-deployment.zip"
-  source = "${path.module}/../backend/lambda-deployment.zip"
-  etag   = filemd5("${path.module}/../backend/lambda-deployment.zip")
-  tags   = local.common_tags
 }
 
 
 # Lambda function
 resource "aws_lambda_function" "api" {
-  # Use S3 for deployment package when using HCP Terraform
+  # Use S3 for deployment package
   s3_bucket        = aws_s3_bucket.lambda_deploy.id
-  s3_key           = aws_s3_object.lambda_package.key
+  s3_key           = "lambda-deployment.zip"
   function_name    = "${local.name_prefix}-api"
   role             = aws_iam_role.lambda_role.arn
   handler          = "lambda_handler.handler"
-  source_code_hash = filebase64sha256("${path.module}/../backend/lambda-deployment.zip")
+  source_code_hash = data.aws_s3_object.lambda_package.version_id
   runtime          = "python3.13"
   architectures    = ["x86_64"]
   timeout          = var.lambda_timeout

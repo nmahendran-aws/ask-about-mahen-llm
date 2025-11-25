@@ -16,7 +16,22 @@ cd "$(dirname "$0")/.."        # project root
 echo "📦 Building Lambda package..."
 (cd backend && uv run deploy.py)
 
-# 2. Terraform workspace & apply
+# 2. Upload Lambda package to S3
+echo "📤 Uploading Lambda package to S3..."
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+DEPLOY_BUCKET="ask-about-mahen-deploy-${AWS_ACCOUNT_ID}"
+
+# Create bucket if it doesn't exist
+if ! aws s3 ls "s3://${DEPLOY_BUCKET}" >/dev/null 2>&1; then
+  echo "Creating deployment bucket: ${DEPLOY_BUCKET}"
+  aws s3 mb "s3://${DEPLOY_BUCKET}" --region us-east-1
+fi
+
+# Upload file
+aws s3 cp backend/lambda-deployment.zip "s3://${DEPLOY_BUCKET}/lambda-deployment.zip"
+
+# 3. Terraform workspace & apply (Managed by HCP Terraform on git push)
+# We just need to ensure the S3 object is updated before the run starts
 # cd terraform
 #AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
