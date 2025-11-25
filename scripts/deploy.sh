@@ -17,10 +17,10 @@ echo "📦 Building Lambda package..."
 (cd backend && uv run deploy.py)
 
 # 2. Terraform workspace & apply
-cd terraform
-AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
-terraform init -input=false
+# cd terraform
+# AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+# AWS_REGION=${DEFAULT_AWS_REGION:-us-east-1}
+# terraform init -input=false
 
 # if ! terraform workspace list | grep -q "$ENVIRONMENT"; then
 #   terraform workspace new "$ENVIRONMENT"
