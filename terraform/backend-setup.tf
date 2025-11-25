@@ -2,8 +2,8 @@
 # Run this once per AWS account, then remove the file
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "twin-terraform-state-${data.aws_caller_identity.current.account_id}"
-  
+  bucket = "ask-about-mahen-terraform-state"
+
   tags = {
     Name        = "Terraform State Store"
     Environment = "global"
@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "terraform_state" {
 
 resource "aws_s3_bucket_versioning" "terraform_state" {
   bucket = aws_s3_bucket.terraform_state.id
-  
+
   versioning_configuration {
     status = "Enabled"
   }
@@ -39,7 +39,7 @@ resource "aws_s3_bucket_public_access_block" "terraform_state" {
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "twin-terraform-locks"
+  name         = "ask-about-mahen-terraform-locks"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
