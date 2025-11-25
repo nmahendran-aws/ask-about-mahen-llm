@@ -43,18 +43,51 @@ echo "📥 Fetching outputs from HCP Terraform workspace..."
 WORKSPACE_NAME="ask-about-mahen-llm"
 ORG_NAME="mahen-arch"
 
+# Check if TFC_TOKEN is set
+if [ -z "$TFC_TOKEN" ]; then
+  echo "❌ Error: TFC_TOKEN environment variable is not set"
+  echo "Please set it in your .env file or GitHub secrets"
+  exit 1
+fi
+
 # Get the latest state version outputs
-OUTPUTS=$(curl -s \
+API_RESPONSE=$(curl -s \
   --header "Authorization: Bearer $TFC_TOKEN" \
   --header "Content-Type: application/vnd.api+json" \
-  "https://app.terraform.io/api/v2/workspaces/${ORG_NAME}/${WORKSPACE_NAME}/current-state-version?include=outputs" \
-  | jq -r '.included[] | select(.type=="state-version-outputs") | {(.attributes.name): .attributes.value} | to_entries[] | "\(.key)=\(.value)"')
+  "https://app.terraform.io/api/v2/workspaces/${ORG_NAME}/${WORKSPACE_NAME}/current-state-version?include=outputs")
+
+# Check if API call was successful
+if [ -z "$API_RESPONSE" ]; then
+  echo "❌ Error: Failed to fetch data from HCP Terraform API"
+  exit 1
+fi
+
+# Check if there are any outputs
+if ! echo "$API_RESPONSE" | jq -e '.included' > /dev/null 2>&1; then
+  echo "❌ Error: No outputs found in HCP Terraform workspace"
+  echo "Make sure terraform apply has been run successfully in the workspace"
+  exit 1
+fi
 
 # Parse outputs
+OUTPUTS=$(echo "$API_RESPONSE" | jq -r '.included[]? | select(.type=="state-version-outputs") | {(.attributes.name): .attributes.value} | to_entries[] | "\(.key)=\(.value)"')
+
+# Parse individual outputs
 API_URL=$(echo "$OUTPUTS" | grep "^api_gateway_url=" | cut -d'=' -f2-)
 FRONTEND_BUCKET=$(echo "$OUTPUTS" | grep "^s3_frontend_bucket=" | cut -d'=' -f2-)
 CLOUDFRONT_URL=$(echo "$OUTPUTS" | grep "^cloudfront_url=" | cut -d'=' -f2-)
 CUSTOM_URL=$(echo "$OUTPUTS" | grep "^custom_domain_url=" | cut -d'=' -f2-)
+
+# Validate required outputs
+if [ -z "$API_URL" ] || [ -z "$FRONTEND_BUCKET" ]; then
+  echo "❌ Error: Required outputs not found (api_gateway_url or s3_frontend_bucket)"
+  echo "Available outputs:"
+  echo "$OUTPUTS"
+  exit 1
+fi
+
+echo "✅ Successfully fetched outputs from HCP Terraform"
+
 
 
 # 3. Build + deploy frontend
