@@ -118,7 +118,8 @@ if [ -n "$CLOUDFRONT_URL" ]; then
   CF_DOMAIN=${CLOUDFRONT_URL#https://}
   
   # Find distribution ID by domain name (more reliable than origin)
-  DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?contains(Aliases.Items, '$CF_DOMAIN') || DomainName=='$CF_DOMAIN'].Id | [0]" --output text)
+  # Handle case where Aliases.Items is null by checking DomainName first or ensuring Aliases.Items is not null
+  DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?DomainName=='$CF_DOMAIN' || (Aliases.Items!=null && contains(Aliases.Items, '$CF_DOMAIN'))].Id | [0]" --output text)
   
   if [ "$DISTRIBUTION_ID" != "None" ] && [ -n "$DISTRIBUTION_ID" ]; then
     echo "Found distribution ID: $DISTRIBUTION_ID"
