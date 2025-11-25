@@ -78,6 +78,13 @@ FRONTEND_BUCKET=$(echo "$OUTPUTS" | grep "^s3_frontend_bucket=" | cut -d'=' -f2-
 CLOUDFRONT_URL=$(echo "$OUTPUTS" | grep "^cloudfront_url=" | cut -d'=' -f2-)
 CUSTOM_URL=$(echo "$OUTPUTS" | grep "^custom_domain_url=" | cut -d'=' -f2-)
 
+echo "🔍 Debug: Parsed Outputs"
+echo "API_URL: $API_URL"
+echo "FRONTEND_BUCKET: $FRONTEND_BUCKET"
+echo "CLOUDFRONT_URL: $CLOUDFRONT_URL"
+echo "CUSTOM_URL: $CUSTOM_URL"
+
+
 # Validate required outputs
 if [ -z "$API_URL" ] || [ -z "$FRONTEND_BUCKET" ]; then
   echo "❌ Error: Required outputs not found (api_gateway_url or s3_frontend_bucket)"
@@ -91,7 +98,7 @@ echo "✅ Successfully fetched outputs from HCP Terraform"
 
 
 # 3. Build + deploy frontend
-cd ../frontend
+cd frontend
 
 # Create production environment file with API URL
 echo "📝 Setting API URL for production..."
