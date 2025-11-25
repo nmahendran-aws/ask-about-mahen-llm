@@ -17,12 +17,11 @@ locals {
     "www.${var.root_domain}"
   ] : []
 
-  environment = terraform.workspace
-  name_prefix = "${var.project_name}-${local.environment}"
+  name_prefix = "${var.project_name}-${var.environment}"
 
   common_tags = {
     Project     = var.project_name
-    Environment = local.environment
+    Environment = var.environment
     ManagedBy   = "terraform"
   }
 }
@@ -163,7 +162,7 @@ resource "aws_lambda_function" "api" {
   function_name    = "${local.name_prefix}-api"
   role             = aws_iam_role.lambda_role.arn
   handler          = "lambda_handler.handler"
-  source_code_hash = aws_s3_object.lambda_package.etag
+  source_code_hash = filebase64sha256("${path.module}/../backend/lambda-deployment.zip")
   runtime          = "python3.13"
   architectures    = ["x86_64"]
   timeout          = var.lambda_timeout
