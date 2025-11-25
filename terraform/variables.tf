@@ -41,11 +41,11 @@ variable "api_throttle_rate_limit" {
 variable "use_custom_domain" {
   description = "Attach a custom domain to CloudFront"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "root_domain" {
-  description = "Apex domain name, e.g. mydomain.com"
+  description = "Maas Family domain name, e.g. maas-fam.com"
   type        = string
-  default     = ""
+  default     = "maas-fam.com"
 }
