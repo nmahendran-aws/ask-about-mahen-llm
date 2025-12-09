@@ -1,3 +1,4 @@
+import context
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -10,6 +11,9 @@ from datetime import datetime
 import boto3
 from botocore.exceptions import ClientError
 from context import prompt
+from strands import Agent
+from strands.models import BedrockModel
+from strands_tools.calculator import calculator
 
 # Load environment variables
 load_dotenv()
@@ -39,6 +43,19 @@ bedrock_client = boto3.client(
 # - amazon.nova-pro-v1:0    (most capable, higher cost)
 # Remember the Heads up: you might need to add us. or eu. prefix to the below model id
 BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "us.amazon.nova-lite-v1:0")
+
+model = BedrockModel(
+    model_id=BEDROCK_MODEL_ID,
+    max_tokens=2000,
+    temperature=0.7,
+    top_p=0.9
+)
+agent = Agent(
+    model=model,
+    tools=[calculator],
+    system_prompt=context.prompt()
+)
+
 
 # Memory storage configuration
 USE_S3 = os.getenv("USE_S3", "false").lower() == "true"
@@ -134,19 +151,8 @@ def call_bedrock(conversation: List[Dict], user_message: str) -> str:
     })
     
     try:
-        # Call Bedrock using the converse API
-        response = bedrock_client.converse(
-            modelId=BEDROCK_MODEL_ID,
-            messages=messages,
-            inferenceConfig={
-                "maxTokens": 2000,
-                "temperature": 0.7,
-                "topP": 0.9
-            }
-        )
-        
-        # Extract the response text
-        return response["output"]["message"]["content"][0]["text"]
+        response = agent(messages)
+        return response.message['content'][0]['text']
         
     except ClientError as e:
         error_code = e.response['Error']['Code']
@@ -165,7 +171,7 @@ def call_bedrock(conversation: List[Dict], user_message: str) -> str:
 @app.get("/")
 async def root():
     return {
-        "message": "AI Digital Application for Mahendran Natarajan (Powered by AWS Bedrock)",
+        "message": "AI Digital Application for Mahendran Natarajan (Powered by AWS Bedrock Agents)",
         "memory_enabled": True,
         "storage": "S3" if USE_S3 else "local",
         "ai_model": BEDROCK_MODEL_ID
