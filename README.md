@@ -62,3 +62,24 @@ aws lambda update-function-code \
 ```
 
 
+***
+
+## **Running Locally**
+
+### Backend
+
+To start the backend server with hot-reloading:
+
+```bash
+cd backend
+uv run uvicorn server:app --reload
+```
+
+### Frontend
+
+To start the frontend development server:
+
+```bash
+cd frontend
+npm run dev
+```

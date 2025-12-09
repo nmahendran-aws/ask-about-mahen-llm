@@ -1,0 +1,31 @@
+default_agent: ask_about_mahen_agentcore
+agents:
+  ask_about_mahen_agentcore:
+    name: ask_about_mahen_agentcore
+    entrypoint: /Users/mahen/learnings/AI/ai-agent/ask-about-mahen-llm/backend/server.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::471727841202:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-83f1e37868
+      execution_role_auto_create: false
+      account: '471727841202'
+      region: us-east-1
+      ecr_repository: 471727841202.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-ask_about_mahen_agentcore
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: ask_about_mahen_agentcore-OQ0yZ9D9E0
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:471727841202:runtime/ask_about_mahen_agentcore-OQ0yZ9D9E0
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-ask_about_mahen_agentcore-builder
+      execution_role: arn:aws:iam::471727841202:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-83f1e37868
+      source_bucket: bedrock-agentcore-codebuild-sources-471727841202-us-east-1
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
